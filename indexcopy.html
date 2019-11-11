@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--#include virtual="inc/meta.inc" -->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+<!--#include virtual="inc/nav.inc" -->
+
+
+</body>
+<script src="//ossweb-img.qq.com/images/js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	// 固定导航
+$(window).scroll(function () {
+    loadNav();
+})
+var navH = 42;
+function loadNav() {
+    var scrollTop = $(window).scrollTop()
+    if (scrollTop>42) {
+        $('.nav').css('top',0);
+    }else if (scrollTop>0&&scrollTop<42){
+        $('.nav').css('top',42-scrollTop);
+    }else {
+        $('.nav').css('top',42);
+    }
+}
+loadNav();
+
+// 导航移入显示隐藏二级菜单
+$('.nav .nav-left').on('mouseenter',function () {
+    $('.sub-nav').css('height','200px');
+})
+$('.nav .nav-left').on('mouseleave',function () {
+    $('.sub-nav').css('height','0');
+})
+$('.sub-nav').on('mouseenter',function () {
+    $('.sub-nav').css('height','200px');
+})
+$('.sub-nav').on('mouseleave',function () {
+    $('.sub-nav').css('height','0');
+})
+$('.nav .nav-right').on('mouseenter',function () {
+    $('.official-channel-warp').css('height','200px');
+})
+$('.official-channel-warp').on('mouseenter',function () {
+    $('.official-channel-warp').css('height','200px');
+})
+$('.nav .nav-right').on('mouseleave',function () {
+    $('.official-channel-warp').css('height','0');
+})
+$('.official-channel-warp').on('mouseleave',function () {
+    $('.official-channel-warp').css('height','0');
+})
+
+</script>
+</html>
