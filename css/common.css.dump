@@ -189,7 +189,7 @@
     font-size: 16px;
 }
 .channel-left li.h-wx:after {
-    content: '¹þ¹þ';
+    content: 'å“ˆå“ˆ';
 }
 .channel-left li.h-bl:after {
     content: '0';
