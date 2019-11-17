@@ -120,3 +120,113 @@
 		clip-path: inset(69px 40px 33px 0px);
 	}
 }
+.bg-video{
+	position: fixed;
+    top: 0;
+    left: 0;
+    height: auto !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    object-fit: fill;
+}
+.section{
+	width: 100%;
+	font-size:50px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+.wrap_swiper_top{
+	width: 628px;
+	height: 312px;
+	margin-left: 120px;
+	margin-top: 60px;
+	background: url(../images/img_border.png) no-repeat center/cover;
+}
+.gallery-top{
+	width: 618px;
+	height: 312px;
+}
+.cont{
+	width: 1300px;
+	margin: 0 auto;
+	position: relative;
+}
+.gallery-top{
+	position: relative;
+}
+/* .gallery-top .swiper-wrapper {
+	width: 618px;
+	height: 312px;
+	margin: 0 auto;
+} */
+.gallery-top .swiper-slide{
+	position: relative;
+	width: 618px;
+	height: 312px;
+}
+.gallery-top img {
+	width: 618px;
+	height: 302px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+}
+.spr{
+	background: url(../images/sprite.png) no-repeat;
+	background-size: 1200px 180px;
+}
+
+.gallery-thumbs {
+    width: 740px !important;
+    height: 83px !important;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 0;
+    top: 40px;
+    left: 6px;
+}
+.gallery-thumbs .swiper-wrapper{
+    width: auto !important;
+    height: 83px !important;
+}
+.gallery-thumbs .swiper-slide {
+    width: 245px !important;
+    height: 76px !important;
+    background-position: 4px 4px ;
+    margin-right: 2px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 70px;
+    color: #a5a5a4;
+}
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+    width: 245px !important;
+    height: 76px !important;
+    margin-right: 2px;
+    background-position: -278px 0 ;
+    color: #fff;
+}
+.next{
+	width: 83px !important;
+	height: 83px !important;
+	font-size: 0;
+	background-position: -697px 0;
+	top: auto !important;    
+	bottom: -30px !important;
+	right: 146px !important;
+  }
+.swiper-button-prev::after,.swiper-button-next::after{
+	font-size: 0 !important;
+}
+.prev{
+	width: 83px !important;
+	height: 83px !important;
+	font-size: 0;
+	background-position: -585px 0;
+	top: auto !important;    
+	bottom: -30px !important;
+	left: 156px !important;
+}
