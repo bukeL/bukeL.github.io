@@ -41,7 +41,7 @@
 }
 .nav .center .nav-right:hover {
     /*background: url(images/sprites.png) no-repeat 0 -66px;*/
-    background-color: #ffa415
+    background-color: #edb93b
 }
 .nav .center .nav-right:hover a,
 .nav .center .nav-right:hover a span {
@@ -83,7 +83,7 @@
     margin-top: 5px;
 }
 .nav .center .fr>li.on,.nav .center .fr>li:hover {
-	background-color: #ffa415
+	background-color: #edb93b
 }
 .nav .center .fr>li.on>a,.nav .center .fr>li.on>a span,
 .nav .center .fr>li:hover>a,.nav .center .fr>li:hover>a span {
@@ -128,7 +128,7 @@
     color: #e5e3e0;
 }
 .down-nav a:hover{
-    color: #ffa415;
+    color: #edb93b;
 }
 .official-channel-warp{
     width: 100%;
