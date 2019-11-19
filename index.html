@@ -47,12 +47,6 @@
                             <span>VIDEO</span>
                         </a>
                     </li>
-                    <!-- <li class="fl colleague">
-                        <a href="javascript:alert('敬请期待');" target="_blank" title="前端小学生">
-                            <em>前端小学生</em>
-                            <span>COLLEAGUE</span>
-                        </a>
-                    </li> -->
                     <li class="fl">
                         <a href="javascript:;" target="_blank" title="编程进阶">
                             <em>编程进阶</em>
@@ -61,7 +55,7 @@
                     </li>
                     <li class="fl cdk">
                         <a href="javascript:;" target="_blank" title="工具应用">
-                            <em>工具应用</em>
+                            <em>应用工具</em>
                             <span>TOOL</span>
                         </a>
                     </li>
@@ -106,6 +100,13 @@
                 </li>
                 <li class="down-nav">
                     <a href="javascript:;" target="_blank" title="SPA博客">SPA博客</a>
+                    <!-- 
+                     公告   
+                     最新
+                     热门
+                     排行
+                     更多
+                     -->
                 </li>
             </ul>
         </div>
@@ -129,16 +130,41 @@
     </div>
     <video src="images/redial.mp4" class="bg-video" autoplay muted loop
         style="height: 937px; width: 1665.78px; margin-left: -49.8889px;"></video>
-    <div id="gufeibai">
+    <div id="wrap_section">
         <div class="section1 section">
             <div class="cont">
-                <div class="wrap_video"></div>
+                <h1 class="view_title spr1">视听赏析</h1>
+                <div class="wrap_video">
+                    <a href="javascript:void(0);" class="box_video" id="box_video">
+                    </a>
+                    <div class="mask"></div>
+                </div>
                 <div class="wrap_view">
                     <h1 class="title">视听赏析</h1>
-                    <div class="wallpaper"></div>
-                    <div class="music"></div>
-                    <div class="movie"></div>
-                    <div class="videopaper"></div>
+                    <div class="wallpaper">
+                        <h2 class="title_wallpaper spr1">原画/壁纸</h2>
+                        <a href="javascript:;" class="link_more">
+                            <img src="images/draw1.png" width="607" height="200" alt="原画/壁纸">
+                        </a>
+                    </div>
+                    <div class="music">
+                        <h2 class="title_music spr1">音乐</h2>
+                        <a href="javascript:;" class="link_more">
+                            <img src="images/draw2.png" width="192" height="192" alt="音乐">
+                        </a>
+                    </div>
+                    <div class="movie">
+                        <h2 class="title_movie spr1">动漫专辑</h2>
+                        <a href="javascript:;" target="_blank" class="link_more">
+                            <img src="images/draw3.png" width="360" height="256" alt="动漫专辑">
+                        </a>
+                    </div>
+                    <div class="videopaper">
+                        <h2 class="title_video spr1">视频</h2>
+                        <a href="javascript:;" class="link_more">
+                            <img src="images/draw4.png" width="448" height="252" alt="视频">
+                        </a>
+                    </div>
                 </div>
                 <div class="wrap_swiper_top">
                     <div class="swiper-container gallery-top">
@@ -162,8 +188,8 @@
                     </div>
                 </div>
 
-                <div class="swiper-button-prev prev"></div>
-                <div class="swiper-button-next next"></div>
+                <div class="swiper-button-prev prev spr1"></div>
+                <div class="swiper-button-next next spr1"></div>
 
                 <div class="swiper-container gallery-thumbs">
                     <div class="swiper-wrapper">
@@ -213,7 +239,7 @@
 
     $(function () {
         // alert(1)
-        $('#gufeibai').fullpage({
+        $('#wrap_section').fullpage({
             // anchors:['news','firstPage', 'secondPage', 'thirdPage','fourthPage'],
             menu: '#myMenu',
             onLeave: function (index, nextIndex, direction) {},
@@ -253,7 +279,11 @@
             'zoom': zoom,
             'height': '100%'
         });
+        // $('.nav').css({
+        //     'zoom': zoom,
+        // })
     }
+
     function getWindowHeight() {
         if (window.innerHeight) {
             return window.innerHeight;
@@ -270,5 +300,4 @@
         FixHeight();
     }
 </script>
-
 </html>

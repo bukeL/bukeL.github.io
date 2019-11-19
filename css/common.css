@@ -219,4 +219,8 @@
     width: 1px;
     border-left: 1px solid #fff;
 }
+.spr1{
+    background: url(../images/sprite1.png) no-repeat;
+    background-size: 800px 600px;
+}
 /*nav E*/
