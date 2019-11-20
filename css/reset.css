@@ -14,6 +14,9 @@ body, html {
     user-select: none;
     width: 100%;
 }
+/* html{
+    overflow: scroll !important;
+} */
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
 }
@@ -134,6 +137,7 @@ sub {
 body {
     position: relative;
     min-width: 1300px;
+    /* overflow: auto !important; */
 }
 /*Reset E*/
 @font-face{

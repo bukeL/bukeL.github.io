@@ -134,9 +134,9 @@
         <div class="section1 section">
             <div class="kv">
                 <h1 class="slogan">
-                        彼方为谁，<br>无我有问，<br>九月露湿，<br>待君之前。
+                    彼方为谁，无我有问，九月露湿，待君之前。
                 </h1>
-                
+                <div class="todown spr1">向下箭头</div>
             </div>
         </div>
         <div class="section2 section">
@@ -249,7 +249,7 @@
         $('#wrap_section').fullpage({
             // anchors:['news','firstPage', 'secondPage', 'thirdPage','fourthPage'],
             menu: '#myMenu',
-            onLeave: function (index, nextIndex, direction) { },
+            onLeave: function (index, nextIndex, direction) {},
         });
     });
 
@@ -279,16 +279,66 @@
         }
     });
 
+
+    function myBrowser() {
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        var isOpera = userAgent.indexOf("Opera") > -1;
+        if (isOpera) { //判断是否Opera浏览器
+            return "Opera"
+        };
+        if (userAgent.indexOf("Firefox") > -1) { //判断是否Firefox浏览器
+            return "FF";
+        };
+        if (userAgent.indexOf("Chrome") > -1) {
+            return "Chrome";
+        };
+        if (userAgent.indexOf("Safari") > -1) { //判断是否Safari浏览器
+            return "Safari";
+        };
+        if (window.document.documentMode) {
+            return "IE";
+        }
+    }
     //根据屏幕宽度调整比例
     function FixHeight() {
+        var browser = myBrowser()
         var zoom = getWindowHeight() / 937;
-        $('.fp-tableCell').css({
-            'zoom': zoom,
-            'height': '100%'
-        });
-        $('.nav').css({
-            'zoom': zoom,
-        })
+        switch (browser) {
+            case "Chrome":
+                change()
+                break;
+            case "FF":
+                change1()
+                break;
+            case "IE":
+                change1()
+                break;
+            default:
+                change()
+        }
+
+        function change() {
+            $('.fp-tableCell').css({
+                'zoom': zoom,
+                'height': '100%'
+            });
+            $('.nav').css({
+                'zoom': zoom,
+            })
+        }
+        //缩放方式 ie,ff
+        function change1() {
+            $('.fp-tableCell').css({
+                'transform': 'scale(' + zoom + ')'
+            });
+            $('.nav').css({
+                'transform': 'scale(' + zoom + ')'
+            })
+            $('.slogan').css({
+                'transform': 'scale(' + zoom + ') translate(0,-45%)',
+                
+            })
+        }
     }
 
     function getWindowHeight() {

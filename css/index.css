@@ -145,15 +145,34 @@
 	opacity: .8;
 }
 .slogan{
-	font-family: fzzt;
-	font-size: 120px;
+	font-size: 0;
+	width: 600px;
+	height: 600px;
+	opacity: .8;
 	position: absolute;
-	color: rgba(247,247,247,.8);
+	background: url(../images/text.png) no-repeat center/cover;
 	top:50%;
-	right:1%;
-	transform: translate(0,-50%);
+	right:0;
+	transform: translate(0,-40%);
 }
-
+.todown{
+	background-position: -719px -537px;
+	width: 81px;
+	height: 63px;
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translate(-50%,0);
+	font-size: 0;
+	opacity: .8;
+	-webkit-animation: move2 1s linear alternate infinite;
+    -o-animation: move2 1s linear alternate infinite;
+    animation: move2 1s linear alternate infinite;
+}
+@keyframes move2 {
+    from {bottom: 40px;}
+    to {bottom: 20px;}
+}
 /* section1 s */
 .cont{
 	width: 1300px;
