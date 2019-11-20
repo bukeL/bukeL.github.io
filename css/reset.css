@@ -136,3 +136,9 @@ body {
     min-width: 1300px;
 }
 /*Reset E*/
+@font-face{
+    font-family: 'fzzt';
+    src:url('../images/fzzt.woff'),
+    url('../images/fzzt.ttf'),
+    url('../images/fzzt.eot')
+}

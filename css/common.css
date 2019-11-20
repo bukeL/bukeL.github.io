@@ -105,7 +105,7 @@
 .sub-nav-inner {
     box-sizing: border-box;
     width: 1370px;
-    height: 220px;
+    height: 160px;
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
@@ -126,6 +126,7 @@
     padding: 0;
     font-size: 14px;
     color: #e5e3e0;
+    margin-bottom: 10px;
 }
 .down-nav a:hover{
     color: #edb93b;

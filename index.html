@@ -132,6 +132,14 @@
         style="height: 937px; width: 1665.78px; margin-left: -49.8889px;"></video>
     <div id="wrap_section">
         <div class="section1 section">
+            <div class="kv">
+                <h1 class="slogan">
+                        彼方为谁，<br>无我有问，<br>九月露湿，<br>待君之前。
+                </h1>
+                
+            </div>
+        </div>
+        <div class="section2 section">
             <div class="cont">
                 <h1 class="view_title spr1">视听赏析</h1>
                 <div class="wrap_video">
@@ -202,7 +210,6 @@
                 </div>
             </div>
         </div>
-        <div class="section2 section">2</div>
         <div class="section3 section">3</div>
     </div>
 </body>
@@ -212,22 +219,22 @@
 <script type="text/javascript">
     // js  nav
     $('.nav .nav-left').on('mouseenter', function () {
-        $('.sub-nav').css('height', '200px');
+        $('.sub-nav').css('height', '160px');
     })
     $('.nav .nav-left').on('mouseleave', function () {
         $('.sub-nav').css('height', '0');
     })
     $('.sub-nav').on('mouseenter', function () {
-        $('.sub-nav').css('height', '200px');
+        $('.sub-nav').css('height', '160px');
     })
     $('.sub-nav').on('mouseleave', function () {
         $('.sub-nav').css('height', '0');
     })
     $('.nav .nav-right').on('mouseenter', function () {
-        $('.official-channel-warp').css('height', '200px');
+        $('.official-channel-warp').css('height', '160px');
     })
     $('.official-channel-warp').on('mouseenter', function () {
-        $('.official-channel-warp').css('height', '200px');
+        $('.official-channel-warp').css('height', '160px');
     })
     $('.nav .nav-right').on('mouseleave', function () {
         $('.official-channel-warp').css('height', '0');
@@ -242,7 +249,7 @@
         $('#wrap_section').fullpage({
             // anchors:['news','firstPage', 'secondPage', 'thirdPage','fourthPage'],
             menu: '#myMenu',
-            onLeave: function (index, nextIndex, direction) {},
+            onLeave: function (index, nextIndex, direction) { },
         });
     });
 
@@ -279,9 +286,9 @@
             'zoom': zoom,
             'height': '100%'
         });
-        // $('.nav').css({
-        //     'zoom': zoom,
-        // })
+        $('.nav').css({
+            'zoom': zoom,
+        })
     }
 
     function getWindowHeight() {
@@ -300,4 +307,5 @@
         FixHeight();
     }
 </script>
+
 </html>
