@@ -4,9 +4,6 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     padding: 0;
     outline: none;
 }
-body {
-    font-family:"Microsoft YaHei", '\5FAE\8F6F\96C5\9ED1';
-}
 body, html {
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: none;
@@ -141,8 +138,6 @@ body {
 }
 /*Reset E*/
 @font-face{
-    font-family: 'fzzt';
-    src:url('../images/fzzt.woff'),
-    url('../images/fzzt.ttf'),
-    url('../images/fzzt.eot')
+    font-family: 'fz';
+    src: url('../images/fzzt.woff');
 }
