@@ -15,9 +15,7 @@ var comm = {
         }
         //点击时逻辑
         navLi.each(function (index) {
-
             $(this).on('click', function () {
-
                 $(this).addClass('active').siblings().removeClass('active')
                 contLi.eq(index).addClass('active').siblings().removeClass('active')
                 if (contLi.eq(index).length === 0) {
@@ -178,47 +176,6 @@ var comm = {
             oParent.append(tpl)
         }
     },
-    literLoadMore: function () {
-        var literData = [{
-                link: 'colleaguedetails.shtml?type=1',
-                date: '09/16',
-                title: '超神领主小剧场',
-                author: 'xxx1'
-            },
-            {
-                link: 'colleaguedetails.shtml?type=1',
-                date: '09/16',
-                title: '超神领主小剧场',
-                author: 'xxx2'
-            },
-            {
-                link: 'colleaguedetails.shtml?type=1',
-                date: '09/16',
-                title: '超神领主小剧场',
-                author: 'xxx3'
-            },
-            {
-                link: 'colleaguedetails.shtml?type=1',
-                date: '09/16',
-                title: '超神领主小剧场',
-                author: 'xxx4'
-            }
-        ]
-        var oParent = $('.box-literature ul');
-        for (var i = 0; i < literData.length; i++) {
-            var tpl = ' <li class="liter-item" style="display:none">' +
-                ' <a href="' + literData[i].link + '" target="_blank" ' +
-                ' onclick="PTTSendClick("link","literature' + i + '","文学");"> ' +
-                ' <p class="time">' + literData[i].date + '</p> ' +
-                ' <div class="liter-info"> ' +
-                ' <h3>' + literData[i].title + '</h3> ' +
-                ' <p>作者: ' + literData[i].author + '</p> ' +
-                ' </div> ' +
-                ' </a> ' +
-                ' </li> '
-            oParent.append(tpl)
-        }
-    },
     audioLoadMore: function () {
         var audioData = [{
                 link: 'colleaguedetails.shtml?type=2',
@@ -325,16 +282,6 @@ $('.box-draw .loading').on('click', function () {
     //每次加载完成后滚动条到底部
     $('.box-draw .force-overflow').stop().animate({
         scrollTop: $('.box-draw .force-overflow')[0].scrollHeight
-    }, 1000)
-})
-
-//文学加载更多
-$('.box-literature .loading').on('click', function () {
-    comm.literLoadMore()
-    $('.box-literature .liter-item').fadeIn(1000);
-    //每次加载完成后滚动条到底部
-    $('.box-literature .force-overflow').stop().animate({
-        scrollTop: $('.box-literature .force-overflow')[0].scrollHeight
     }, 1000)
 })
 
