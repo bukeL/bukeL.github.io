@@ -133,28 +133,28 @@ var comm = {
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '987',
-                alt: '绘画'
+                alt: '原画/壁纸'
             },
             {
                 imgurl: 'images/pic2.png',
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '986',
-                alt: '绘画'
+                alt: '原画/壁纸'
             },
             {
                 imgurl: 'images/pic1.png',
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '985',
-                alt: '绘画'
+                alt: '原画/壁纸'
             },
             {
                 imgurl: 'images/pic2.png',
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '984',
-                alt: '绘画'
+                alt: '原画/壁纸'
             }
         ]
         var oParent = $('#draw-ul');
@@ -200,8 +200,8 @@ var comm = {
         for (var i = 0; i < audioData.length; i++) {
             var tpl = ' <li class="item-audio" style="display:none"> '+
             ' <a href="'+ audioData[i].link +'" target="_blank" class="box-img" '+
-            ' onclick="PTTSendClick("link","audio'+ i +'","视听");"> '+
-            ' <img src="'+ audioData[i].imgurl +'" alt="视听" width="349px" '+
+            ' onclick="PTTSendClick("link","audio'+ i +'","动漫");"> '+
+            ' <img src="'+ audioData[i].imgurl +'" alt="动漫" width="349px" '+
             ' height="198px;"> '+
             ' </a> '+
             ' <p class="introduce">' + audioData[i].title + '</p> '+
@@ -218,28 +218,28 @@ var comm = {
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '987',
-                alt: '绘画'
+                alt: '视频/壁纸'
             },
             {
                 imgurl: 'images/pic2.png',
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '986',
-                alt: '绘画'
+                alt: '视频/壁纸'
             },
             {
                 imgurl: 'images/pic1.png',
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '985',
-                alt: '绘画'
+                alt: '视频/壁纸'
             },
             {
                 imgurl: 'images/pic2.png',
                 title: '童话系列扉页之夜莺与玫瑰',
                 author: '白泽',
                 num: '984',
-                alt: '绘画'
+                alt: '视频/壁纸'
             }
         ]
         var oParent = $('#cos-ul');
@@ -271,7 +271,7 @@ var comm = {
 }
 comm.init();
 
-// 绘画点击加载更多
+// 原画点击加载更多
 $('.box-draw .loading').on('click', function () {
     comm.drawLoadMore()
     //给新的dom添加点赞点击事件
@@ -285,7 +285,7 @@ $('.box-draw .loading').on('click', function () {
     }, 1000)
 })
 
-//视听加载更多
+//动画加载更多
 $('.box-audio .loading').on('click', function () {
     comm.audioLoadMore()
     //给新的dom添加点赞点击事件
@@ -297,7 +297,7 @@ $('.box-audio .loading').on('click', function () {
     }, 1000)
 })
 
-//cos点击加载更多
+//视频壁纸点击加载更多
 $('.box-cosplay .loading').on('click', function () {
     //加载数据
     comm.cosLoadMore()
