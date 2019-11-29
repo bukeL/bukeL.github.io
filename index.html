@@ -299,7 +299,7 @@
             return "IE";
         }
     }
-    //根据屏幕宽度调整比例
+    //根据可视区域高度调整比例
     function FixHeight() {
         var browser = myBrowser()
         var zoom = getWindowHeight() / 937;
@@ -356,6 +356,7 @@
     window.onload = function () {
         FixHeight();
     }
+
 </script>
 
 </html>
