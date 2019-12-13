@@ -198,17 +198,17 @@ var comm = {
         ]
         var oParent = $('.box-audio ul');
         for (var i = 0; i < audioData.length; i++) {
-            var tpl = ' <li class="item-audio" style="display:none"> '+
-            ' <a href="'+ audioData[i].link +'" target="_blank" class="box-img" '+
-            ' onclick="PTTSendClick("link","audio'+ i +'","动漫");"> '+
-            ' <img src="'+ audioData[i].imgurl +'" alt="动漫" width="349px" '+
-            ' height="198px;"> '+
-            ' </a> '+
-            ' <p class="introduce">' + audioData[i].title + '</p> '+
-            ' <p class="good"><a href="javascript:;" '+
-            ' onclick="PTTSendClick("link","audioheart' + i + '","点赞");" class="heart-k">点赞</a>'+ audioData[i].num+' '+
-            ' </p> '+
-            ' </li>'
+            var tpl = ' <li class="item-audio" style="display:none"> ' +
+                ' <a href="' + audioData[i].link + '" target="_blank" class="box-img" ' +
+                ' onclick="PTTSendClick("link","audio' + i + '","动漫");"> ' +
+                ' <img src="' + audioData[i].imgurl + '" alt="动漫" width="349px" ' +
+                ' height="198px;"> ' +
+                ' </a> ' +
+                ' <p class="introduce">' + audioData[i].title + '</p> ' +
+                ' <p class="good"><a href="javascript:;" ' +
+                ' onclick="PTTSendClick("link","audioheart' + i + '","点赞");" class="heart-k">点赞</a>' + audioData[i].num + ' ' +
+                ' </p> ' +
+                ' </li>'
             oParent.append(tpl)
         }
     },
@@ -311,3 +311,58 @@ $('.box-cosplay .loading').on('click', function () {
         scrollTop: $('.box-cosplay .force-overflow')[0].scrollHeight
     }, 1000)
 })
+var url = '//localhost:3000/api/allDraw'
+$.ajax({
+    type: "get",
+    async: true,
+    url: url,
+    success:function(result) {
+        console.log(result)
+    }
+});
+
+var result = {
+    message: 'success',
+    status: 0,
+    from: '',
+    data: {
+        page: 1,
+        pagesize: 4,
+        total: 100,
+        totalpage: 25,
+        msg: [{
+                id: 1,
+                picId: 5,
+                imgurl: 'images/pic1.png',
+                title: '童话系列扉页之夜莺与玫瑰',
+                author: '白泽',
+                num: '987',
+                alt: '视频/壁纸',
+                iTime: '2019-11-19 15:44:03',
+                type: 'draw'
+            },
+            {
+                id: 1,
+                picId: 5,
+                imgurl: 'images/pic1.png',
+                title: '童话系列扉页之夜莺与玫瑰',
+                author: '白泽',
+                num: '987',
+                alt: '视频/壁纸',
+                iTime: '2019-11-19 15:44:03',
+                type: 'draw'
+            },
+            {
+                id: 1,
+                picId: 5,
+                imgurl: 'images/pic1.png',
+                title: '童话系列扉页之夜莺与玫瑰',
+                author: '白泽',
+                num: '987',
+                alt: '视频/壁纸',
+                iTime: '2019-11-19 15:44:03',
+                type: 'draw'
+            },
+        ]
+    }
+}
