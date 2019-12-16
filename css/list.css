@@ -301,7 +301,6 @@ body{
     from {
         height: 0;
     }
-
     to {
         height: 8px;
     }
@@ -311,7 +310,6 @@ body{
     from {
         height: 0;
     }
-
     to {
         height: 8px;
     }
@@ -712,7 +710,8 @@ body{
 .dis-btnmore {
     background-color: #ccc !important;
     /* color: #a9a9a9 !important; */
-    cursor: not-allowed !important;
+    /* cursor: not-allowed !important; */
+    pointer-events: none;
 }
 .mod-h2{
     background: url(../images/mod_pic_icon.png) no-repeat;
