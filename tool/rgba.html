@@ -28,13 +28,11 @@
             height: 50px;
             margin: 10px auto;
         }
-
         .rgba {
             width: 60px;
             height: 30px;
             line-height: 30px;
         }
-
         .btn-rgb16 {
             display: block;
             width: 150px;
@@ -45,11 +43,9 @@
             margin: 20px auto 0;
             text-align: center;
         }
-
         .btn-rgb16:hover {
             background: #ddd;
         }
-
         .btn-rgba {
             display: block;
             width: 150px;
@@ -60,7 +56,6 @@
             margin: 20px auto 0;
             text-align: center;
         }
-
         #a_mo2,
         #a_mo3 {
             margin-top: 10px;
@@ -69,33 +64,28 @@
             height: 30px;
             line-height: 30px;
         }
-
         .ip2 {
             margin-top: 40px;
             width: 100px;
             height: 30px;
             line-height: 30px;
         }
-
         .torgb16 {
             width: 300px;
             border: 1px solid #ccc;
             margin-top: 50px;
             padding-top: 40px
         }
-
         .torgb {
             width: 300px;
             border: 1px solid #ccc;
             border-top: none;
             overflow: hidden;
         }
-
         .box-ip {
             display: flex;
             justify-content: space-around;
         }
-
         .wrap-rgb {
             width: 1300px;
             min-width: 1300px;
@@ -104,11 +94,9 @@
             position: relative;
             perspective: 1600px;
         }
-
         .ip {
             border: 1px solid #ccc;
         }
-
         .cube {
             width: 350px;
             height: 350px;
@@ -119,45 +107,36 @@
             animation: wang 20s linear infinite;
             transform-style: preserve-3d;
         }
-
         @keyframes wang {
             100% {
                 transform: rotateY(360deg) rotateX(360deg);
             }
         }
-
         .cube:hover {
             animation-play-state: paused;
             /* Û±Í“∆»Î‘›Õ£∂Øª≠*/
         }
-
         .box {
             position: absolute;
             width: 348px;
             height: 348px;
             border: 1px dotted #ccc;
         }
-
         .before {
             transform: translateZ(175px);
         }
-
         .after {
             transform: translateZ(-175px);
         }
-
         .left {
             transform: rotateY(-90deg) translateZ(175px);
         }
-
         .right {
             transform: rotateY(90deg) translateZ(175px);
         }
-
         .up {
             transform: rotateX(90deg) translateZ(175px);
         }
-
         .down {
             transform: rotateX(-90deg) translateZ(175px);
         }
@@ -178,7 +157,6 @@
             width: 6px;
             background-color: #F5F5F5;
         }
-
         .text-list::-webkit-scrollbar-thumb{
             border-radius: 9px;
             background-color: #626262;
@@ -1216,7 +1194,6 @@
                 document.getElementsByClassName("box")[i].style.backgroundColor = hexcode;
             }
         }
-
         function showRGB2() {
             var a = document.getElementsByName("rgba16")[0].value;
             if (a.substr(0, 1) == "#") a = a.substring(1);
@@ -1240,7 +1217,6 @@
             for (var i = 0; i < document.getElementsByClassName("box").length; i++) {
                 document.getElementsByClassName("box")[i].style.backgroundColor = "#" + a;
             }
-
         }
     </script>
 </body>

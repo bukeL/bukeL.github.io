@@ -527,7 +527,7 @@ body{
     right: 40px;
     top: 50%;
     margin-top: -20px;
-    z-index: 9999;
+    z-index: 99;
     display: none
 }
 .nav-right a{
@@ -680,6 +680,25 @@ body{
     height: 463px;
     background: url(../images/dia.png) no-repeat center;
 }
+.dialogimg  img.w{
+    width: 100%;
+    min-width: 700px;
+    max-width: 1100px;
+    height: auto;
+}
+.dialogimg  img.h{
+    width: auto;
+    min-height: 400px;
+    max-height: 800px;
+    height: 100%;
+}
+.dialogimg,.diavideo{
+    z-index: 999;
+}
+.dialogimg  .dia-close,.diavideo .dia-close{
+    top: -10px;
+    right: -60px;
+}
 .dia-close{
     font-size: 0;
     position: absolute;
@@ -725,4 +744,8 @@ body{
     text-indent: -10px;
     font-size: 40px;
     color: #216162;
+}
+.vide {
+    width: 800px;
+    height: 600px;
 }

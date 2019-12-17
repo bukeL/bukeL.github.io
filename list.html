@@ -62,12 +62,13 @@
                             <ul id="draw-ul">
                                 <li class="item" v-for="(item,index) in drawArr" :key="index">
                                     <div class="box-item">
-                                        <a href="colleaguedetails.shtml?type=0" target="_blank">
+                                        <a href="javascript:;" target="_blank" @click="imgdia(item.imgUrl)">
                                             <img :src="item.imgUrl" :alt="item.alt" width="268" height="auto">
                                         </a>
                                         <p class="title">{{item.title}}</p>
                                         <p class="author">{{item.author}}</p>
-                                        <p class="good" :data-id="item.id"><a href="javascript:;" class="heart-k">点赞</a>{{item.num}}
+                                        <p class="good" :data-id="item.id"><a href="javascript:;"
+                                                class="heart-k">点赞</a>{{item.num}}
                                         </p>
                                     </div>
                                 </li>
@@ -75,7 +76,7 @@
                         </div>
                         <!-- dis-btnmore -->
                         <div v-show="isDrawLoadBtn" class="loading" @click="loadDrawMore">加载更多</div>
-                        <div v-show="!isDrawLoadBtn" class="loading dis-btnmore" @click="loadDrawMore">没有更多了</div>
+                        <div v-show="!isDrawLoadBtn" class="loading dis-btnmore">没有更多了</div>
                     </li>
                     <li class="box-music">
                         <div class="poster hd">海报背景</div>
@@ -244,36 +245,38 @@
                         <div class="force-overflow">
                             <ul>
                                 <li class="item-audio" v-for="(item,index) in animateArr" :key="index">
-                                    <a href="colleaguedetails.shtml?type=2" target="_blank" class="box-img">
+                                    <a :href="'animatedetail.html?id='+item.id" target="_blank" class="box-img">
                                         <img :src="item.imgurl" :alt="item.animation" width="349px" height="198px;">
                                     </a>
                                     <p class="introduce">{{item.title}}</p>
-                                    <p class="good" :data-id="item.id"><a href="javascript:;" class="heart-k">点赞</a>{{item.num}}
+                                    <p class="good" :data-id="item.id"><a href="javascript:;"
+                                            class="heart-k">点赞</a>{{item.num}}
                                     </p>
                                 </li>
                             </ul>
                         </div>
                         <div v-show="isAnimateLoadBtn" class="loading" @click="loadAnimateMore">加载更多</div>
-                        <div v-show="!isAnimateLoadBtn" class="loading dis-btnmore" @click="loadAnimateMore">没有更多了</div>
+                        <div v-show="!isAnimateLoadBtn" class="loading dis-btnmore">没有更多了</div>
                     </li>
                     <li class="box-cosplay">
                         <div class="force-overflow">
                             <ul id="cos-ul">
                                 <li class="item2" v-for="(item,index) in VideoArr" :key="index">
                                     <div class="box-item">
-                                        <a href="colleaguedetails.shtml?type=0" target="_blank">
+                                        <a href="javascript:;" @click= "videoDia(item.vId)" target="_blank">
                                             <img :src="item.imgUrl" :alt="item.alt" width="268" height="auto">
                                         </a>
                                         <p class="title">{{item.title}}</p>
                                         <p class="author">{{item.author}}</p>
-                                        <p class="good" :data-id="item.id"><a href="javascript:;" class="heart-k">点赞</a>{{item.num}}
+                                        <p class="good" :data-id="item.id"><a href="javascript:;"
+                                                class="heart-k">点赞</a>{{item.num}}
                                         </p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div v-show="isVideoLoadBtn" class="loading" @click="loadVideoMore">加载更多</div>
-                        <div v-show="!isVideoLoadBtn" class="loading dis-btnmore" @click="loadVideoMore">没有更多了</div>
+                        <div v-show="!isVideoLoadBtn" class="loading dis-btnmore">没有更多了</div>
                     </li>
                 </ul>
                 <div class="nav-right">
@@ -288,11 +291,26 @@
             <a href="javascript:;" class="dia-submit">我要投稿</a>
             <a class="dia-close" href="javascript:showDialog.hide()" title="关闭">×</a>
         </div>
+        <!-- 原画壁纸弹窗 -->
+        <div class="dialogimg" id="dialogimg" style="display:none">
+            <img src="" alt="原画/壁纸">
+            <a class="dia-close" href="javascript:showDialog.hide()" title="关闭">×</a>
+        </div>
+        <!-- 视频壁纸弹窗 -->
+        <div id="dia-video" style="display:none" class="diavideo">
+            <div class="dia-cont">
+                <div class="vide" id="vide">
+                </div>
+            </div>
+            <a class="dia-close hd" href="javascript:showDialog.hide()"
+                ontouchend="PTTSendClick('btn','closecommon','关闭common');">关闭</a>
+        </div>
     </div>
     <script src="//ossweb-img.qq.com/images/js/milo_bundle/milo.js"></script>
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="//ossweb-img.qq.com/images/js/vue_component/vue-2.2.6.min.js"></script>
+    <script src="//vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
     <script src="js/list-vue.js" charset="utf-8"></script>
     <script>
         window.onload = function () {
@@ -306,6 +324,12 @@
                     el: '.pagination',
                 },
             });
+            app.warterfall("draw-ul", "item");
+            app.warterfall("cos-ul", "item2");
+            //关闭视频时销毁声音
+            $(".diavideo .dia-close").on("click", function() {
+                $(".vide").empty();
+            })
         }
         // 点击返回顶部
         $('.to-top').on('click', function () {
@@ -313,7 +337,6 @@
                 scrollTop: 0
             }, 1000);
         })
-
         //页面滚动时右侧悬浮
         if ($(window).scrollTop() > (1000)) {
             $('.nav-right').fadeIn()
@@ -326,12 +349,6 @@
                 $('.nav-right').fadeIn()
             }
         });
-
-        //顶部导航的返回上次按钮置灰,并不可点击
-        $('.home a').css({
-            'color': '#A9A9A9',
-            'pointer-events': 'none'
-        })
         $('.music-list li:nth-child(odd)').css('background', 'rgba(242,233,217,.5)')
     </script>
 </body>

@@ -12,7 +12,7 @@
              isDrawLoadBtn: true,
              isVideoLoadBtn: true,
              isAnimateLoadBtn: true,
-             url: '//localhost:3000'
+             url: '//localhost:3000/api/'
          }
      },
      methods: {
@@ -43,9 +43,20 @@
                      } else {
                          num = index
                      }
-                     //调用瀑布流函数，对每一项进行定位
-                     that.warterfall("draw-ul", "item");
-                     that.warterfall("cos-ul", "item2");
+                     if (index == 0) {
+                         that.loadfillDraw(that.page)
+                         that.warterfall("draw-ul", "item");
+                     } else if (index == 1) {
+
+                     } else if (index == 2) {
+                         that.loadfillAnimate(that.page2)
+                     } else if (index == 3) {
+                         that.loadfillVideo(that.page1)
+                         that.warterfall("cos-ul", "item2");
+                     } else {
+                         that.TGDialogS('dialog')
+                         that.loadfillDraw(that.page)
+                     }
                  })
              })
          },
@@ -121,22 +132,22 @@
          },
          //点赞
          clickGood: function (el) {
-             var isclick = false
+             //  var isclick = false
              //4个列表中的点赞类名都为good
+             $(el).off('click')
              $(el).on('click', function () {
                  var goodId = $(this).attr('data-id')
+                 var isclick = $(this).children('a').hasClass('heart-s')
                  if (isclick) {
                      $(this).children('a').addClass('heart-k').removeClass('heart-s')
-                     isclick = !isclick
                  } else {
                      $(this).children('a').addClass('heart-s').removeClass('heart-k')
-                     isclick = !isclick
                  }
              })
          },
          loadfillDraw: function (page) {
              var that = this
-             var url = this.url + '/api/allDraw?page=' + page
+             var url = this.url + 'allDraw?page=' + page
              $.ajax({
                  type: "get",
                  async: true,
@@ -169,7 +180,7 @@
          },
          loadfillVideo: function (page1) {
              var that = this
-             var url = this.url + '/api/allVideo?page=' + page1
+             var url = this.url + 'allVideo?page=' + page1
              $.ajax({
                  type: "get",
                  async: true,
@@ -202,7 +213,7 @@
          },
          loadfillAnimate: function (page2) {
              var that = this
-             var url = this.url + '/api/allAnimation?page=' + page2
+             var url = this.url + 'allAnimation?page=' + page2
              $.ajax({
                  type: "get",
                  async: true,
@@ -220,8 +231,8 @@
                          }
                      }
                      that.$nextTick(function () {
-                        this.clickGood('.item-audio .good')
-                    })
+                         this.clickGood('.item-audio .good')
+                     })
                  }
              });
          },
@@ -231,16 +242,46 @@
              $('.box-audio .force-overflow').stop().animate({
                  scrollTop: $('.box-audio .force-overflow')[0].scrollHeight
              }, 1000)
+         },
+         firstEnter: function () {
+             var type = this.GetQueryString('type') || 0;
+             if (type == 0) {
+                 this.loadfillDraw(this.page)
+             } else if (type == 1) {
+
+             } else if (type == 2) {
+                 this.loadfillAnimate(this.page2)
+             } else if (type == 3) {
+                 this.loadfillVideo(this.page1)
+             } else {
+                 this.TGDialogS('dialog')
+                 this.loadfillDraw(this.page)
+             }
+         },
+         imgdia: function (imgurl) {
+             $('#dialogimg img').attr('src', imgurl)
+             var w = $('#dialogimg img')[0].naturalWidth
+             var h = $('#dialogimg img')[0].naturalHeight
+             if (w > h) {
+                 $('#dialogimg img').addClass('w').removeClass('h')
+             } else {
+                 $('#dialogimg img').addClass('h').removeClass('w')
+             }
+             this.TGDialogS('dialogimg')
+         },
+         videoDia: function (vid) {
+             var player = new Txplayer({
+                 containerId: 'vide',
+                 vid: vid,
+                 width: '100%',
+                 height: '100%',
+                 autoplay: true
+             });
+             this.TGDialogS('dia-video');
          }
      },
      mounted: function () {
          this.commNav()
-         this.loadfillDraw(this.page)
-         this.loadfillVideo(this.page1)
-         this.loadfillAnimate(this.page1)
-     },
-     updated: function () {
-         //  this.warterfall("draw-ul", "item")
-         //  this.warterfall("cos-ul", "item2")
+         this.firstEnter()
      }
  })

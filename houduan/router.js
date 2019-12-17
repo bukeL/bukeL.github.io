@@ -4,7 +4,6 @@ var db = require('./api/mysql.js')
 var router = express.Router()
 var path = require('path')
 
-
 function normalErrBack(error) {
 	if(error){
 		console.log(error)
