@@ -248,7 +248,7 @@
              if (type == 0) {
                  this.loadfillDraw(this.page)
              } else if (type == 1) {
-
+                
              } else if (type == 2) {
                  this.loadfillAnimate(this.page2)
              } else if (type == 3) {
