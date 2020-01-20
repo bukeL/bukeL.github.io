@@ -137,7 +137,7 @@
                         <div v-show="!isVideoLoadBtn" class="loading dis-btnmore">没有更多了</div>
                     </li>
                 </ul>
-                <div class="nav-right">
+                <div class="nav-right1">
                     <a href="javascript:;" class="submit-right">投稿</a>
                     <a href="javascript:;" class="to-top">返回顶部</a>
                 </div>
@@ -257,14 +257,14 @@
         })
         //页面滚动时右侧悬浮
         if ($(window).scrollTop() > (1000)) {
-            $('.nav-right').fadeIn()
+            $('.nav-right1').fadeIn()
         }
         $(window).bind("scroll", function () {
             var top = $(this).scrollTop(); // 当前窗口的滚动距离
             if (top < (1000)) {
-                $('.nav-right').fadeOut()
+                $('.nav-right1').fadeOut()
             } else {
-                $('.nav-right').fadeIn()
+                $('.nav-right1').fadeIn()
             }
         });
     </script>

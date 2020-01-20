@@ -519,7 +519,7 @@ body{
     left: 50%;
     margin:  0 0 0 -270px !important;
 }
-.nav-right{
+.nav-right1{
     width: 189px;
     height: 199px;
     position: fixed;
@@ -530,7 +530,7 @@ body{
     z-index: 99;
     display: none
 }
-.nav-right a{
+.nav-right1 a{
     display: block;
     width: 138px;
 	height: 44px;
@@ -543,13 +543,13 @@ body{
     border-radius: 4px;
     margin-left: 30px;
 }
-.nav-right a:hover{
+.nav-right1 a:hover{
     background-color: #008cee
 }
-.nav-right .submit-right{
+.nav-right1 .submit-right{
     margin-top: 60px;
 }
-.nav-right .to-top{
+.nav-right1 .to-top{
     margin-top: 10px;
 }
 
